@@ -1,0 +1,48 @@
+import random
+rock = '''
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+'''
+
+paper = '''
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+'''
+
+scissors = '''
+    _______
+---'   ____)____    
+          ______)
+       __________)
+      (____)
+---.__(___)
+'''
+choices = [rock, paper, scissors]
+#Write youprint(rock)
+print("enter you choice")
+user = int(input("0 for rock, 1 for paper, 2 for scissors"))
+
+if user in [0,1,2]:
+    print(f"your choice:\n{choices[user]}")
+
+    computer = random.choice(choices)
+    print(f"computer choice:\n{computer}")
+    if choices[user] == computer:
+        print("its a draw")
+    elif (user == 0 and computer == 2) or \
+         (user == 1 and computer == 0) or \
+         (user == 2 and computer == 1):
+        print("you win")
+
+    else:
+        print("you lose")
+else:
+    print("invalid choice")
